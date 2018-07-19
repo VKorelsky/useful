@@ -14,3 +14,5 @@
 - `fn + ctrl + left-arrow`, go to first cell in worksheet
 - `shift + spacebar`, select entire row
 - `ctrl + spacebar`, select entire column
+
+- `ctrtl + cmd + v`, paste special
