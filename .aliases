@@ -1,0 +1,25 @@
+function td {
+  # toggle showing and hiding the desktop
+  # creates a hidden folder on the desktop called .desktop
+  # name can be changed by altering the variable .desktop
+  # name of the folder to hide the stuff in
+  hidden_dir_name=.desktop
+
+  if [ -d ~/Desktop/.desktop ] # is the hidden folder there ?
+  then 
+    # then move every file out of it and into the desktop
+    ls ~/Desktop/.desktop | while read file 
+    do
+      mv ~/Desktop/.desktop/ ~/Desktop/
+    done
+    rm -rf ~/Desktop/.desktop;
+  else
+    # else create it and move every file in desktop into it
+    mkdir ~/Desktop/.desktop 
+  
+    ls ~/Desktop | while read file 
+    do 
+      mv ~/Desktop/ ~/Desktop/.desktop/
+    done
+  fi
+}
