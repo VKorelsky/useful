@@ -38,10 +38,11 @@ end
 run HelloRack.new
 ``` 
 
-Scaling up, we can create a tiny web framework using Rack::Builder to register routes with blocks of code to run depending on which URL pattern is found in the request. This is spread over three files: 
-	- rack file (.ru)
-	- Framework class with a class method to create or return an instance of the Rack::Builder, and a plain method to register new routes (url pattern + block) with this instance
-	- And an action class, which is used to evaluate the blocks of code defined for each route in context 
+Scaling up, we can create a tiny web framework using Rack::Builder to register routes with blocks of code to run depending on which URL pattern is found in the request. 
+This is spread over three files: 
+- rack file (.ru)
+- Framework class with a class method to create or return an instance of the Rack::Builder, and a plain method to register new routes (url pattern + block) with this instance
+- And an action class, which is used to evaluate the blocks of code defined for each route in context 
 
 ```rb
 $:.unshift File.dirname(__FILE__)
